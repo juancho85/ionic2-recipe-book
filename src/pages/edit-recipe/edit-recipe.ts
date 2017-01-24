@@ -62,15 +62,10 @@ export class EditRecipePage implements OnInit {
   }
 
   private getIngredientFormGroup(ingredient: Ingredient): FormGroup{
-    const myForm: FormGroup = this.formBuilder.group({
+    return this.formBuilder.group({
       name: new FormControl(ingredient.name, Validators.required),
       amount: new FormControl(ingredient.amount, Validators.required)
     });
-
-    console.log("getIngredientFormGroup");
-    console.log(myForm);
-
-    return myForm;
   }
 
   onManageIngredients() {
