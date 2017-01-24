@@ -42,7 +42,6 @@
       <ion-item
         *ngFor="let igControl of recipeForm.get('ingredients').controls; let i = index">
         <div [formGroupName]="i">
-          testsetset
           <ion-label floating>Name</ion-label>
           <ion-input type="text" formControlName="name"></ion-input>
           <ion-label floating>Amount</ion-label>
