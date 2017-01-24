@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import {NavParams, NavController} from 'ionic-angular';
+import {NavParams, NavController, ToastController} from 'ionic-angular';
 import {Ingredient} from "../../models/ingredient.model";
 import {EditRecipePage} from "../edit-recipe/edit-recipe";
 import {RecipesService} from "../../services/recipes.service";
 import {Recipe} from "../../models/recipe.model";
+import {ShoppingListService} from "../../services/shopping-list.service";
 
 @Component({
   selector: 'page-recipe',
@@ -16,7 +17,9 @@ export class RecipePage {
 
   constructor( private navParams: NavParams,
     private navCtrl: NavController,
-    private recipesService: RecipesService) {}
+    private recipesService: RecipesService,
+    private shoppingListService: ShoppingListService,
+    private toastController: ToastController) {}
 
   ionViewWillEnter() {
     const data = this.navParams.data;
@@ -25,7 +28,12 @@ export class RecipePage {
   }
 
   onAddToShoppingList() {
-
+    this.shoppingListService.addItems(this.recipe.ingredients);
+    const toast = this.toastController.create({
+      message: "Ingredients added to shopping list",
+      duration: 1500
+    });
+    toast.present();
   }
 
   onEditRecipe() {
