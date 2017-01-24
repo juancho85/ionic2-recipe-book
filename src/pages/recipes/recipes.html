@@ -13,5 +13,16 @@
 
 
 <ion-content padding>
+  <ion-list>
+    <button
+      ion-item
+      *ngFor="let recipe of recipes; let i = index">
+      <h2>{{recipe.title}}</h2>
+      <ion-note>{{recipe.difficulty}}</ion-note>
+      <ion-icon name="eye" item-right (click)="onLoadRecipe(recipe, i)"></ion-icon>
+      <ion-icon name="trash" item-right (click)="onDeleteRecipe(i)"></ion-icon>
+      <ion-icon name="create" item-right (click)="onEditRecipe(recipe, i)"></ion-icon>
+    </button>
+  </ion-list>
 
 </ion-content>
