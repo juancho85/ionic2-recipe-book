@@ -16,6 +16,7 @@ export class RecipesService {
 
   updateRecipe(index: number, title: string, description: string, difficulty: string, ingredients: Ingredient[]) {
     this.recipes[index] = new Recipe(title, description, difficulty, ingredients);
+    console.log(this.recipes);
   }
 
   getRecipes(): Recipe[] {
