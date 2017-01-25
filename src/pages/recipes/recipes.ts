@@ -64,6 +64,10 @@ export class RecipesPage {
     });
     popover.onDidDismiss(
       data => {
+        //when clicking outside of the popover
+        if(!data){
+          return;
+        }
         if(data.action == 'load'){
           loading.present();
           this.authService.getActiveUser().getToken()
