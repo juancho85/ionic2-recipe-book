@@ -160,6 +160,11 @@ export class EditRecipePage implements OnInit {
     this.navCtrl.popToRoot();
   }
 
+  debug(formGroup: FormGroup){
+    console.log(formGroup['name'].value);
+    console.log(formGroup.value);
+  }
+
 
 
 

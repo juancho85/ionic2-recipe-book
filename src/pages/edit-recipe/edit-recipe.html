@@ -39,15 +39,12 @@
       Manage Ingredients
     </button>
     <ion-list formArrayName="ingredients">
-      <ion-item
-        *ngFor="let igControl of recipeForm.get('ingredients').controls; let i = index">
-        <div [formGroupName]="i">
-          <ion-label floating>Name</ion-label>
-          <ion-input type="text" formControlName="name"></ion-input>
-          <ion-label floating>Amount</ion-label>
-          <ion-input type="number" formControlName="amount"></ion-input>
-        </div>
-      </ion-item>
+      <div *ngFor="let igControl of recipeForm.get('ingredients').controls; let i = index">
+        <ion-item [formGroupName]="i">
+          <ion-input type="text" formControlName="name" [value]="igControl.controls['name'].value"></ion-input>
+          <ion-input type="number" formControlName="amount" [value]="igControl.controls['amount'].value"></ion-input>
+        </ion-item>
+      </div>
     </ion-list>
     <button type="submit" ion-button block [disabled]="!recipeForm.valid">{{ mode }} Recipe</button>
   </form>
