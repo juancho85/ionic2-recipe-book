@@ -11,6 +11,7 @@ import {RecipesService} from "../services/recipes.service";
 import {SigninPage} from "../pages/signin/signin";
 import {SignupPage} from "../pages/signup/signup";
 import {AuthService} from "../services/auth.service";
+import {SLOptionsPage} from "../pages/shopping-list/sl-options/sl-options";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {AuthService} from "../services/auth.service";
     RecipesPage,
     EditRecipePage,
     SigninPage,
-    SignupPage
+    SignupPage,
+    SLOptionsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -35,7 +37,8 @@ import {AuthService} from "../services/auth.service";
     RecipesPage,
     EditRecipePage,
     SigninPage,
-    SignupPage
+    SignupPage,
+    SLOptionsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, ShoppingListService, RecipesService, AuthService]
 })

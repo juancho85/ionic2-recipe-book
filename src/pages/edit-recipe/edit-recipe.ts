@@ -150,7 +150,6 @@ export class EditRecipePage implements OnInit {
 
   onSubmit() {
     const value = this.recipeForm.value;
-    let ingredients = [];
     if(this.mode=='Edit'){
       this.recipesService.updateRecipe(this.index, value.title, value.description, value.difficulty, value.ingredients)
     }else{
