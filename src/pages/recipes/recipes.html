@@ -10,16 +10,15 @@
       <button ion-button icon-only (click)="onNewRecipe()">
         <ion-icon name="add" color="primary"></ion-icon>
       </button>
-      <button ion-icon (click)="onShowOptions($event)">
-        <ion-icon name="more" color="primary"></ion-icon>
+      <button ion-button icon-only (click)="onShowOptions($event)">
+        <ion-icon name="cloud" color="primary"></ion-icon>
       </button>
     </ion-buttons>
+
     <ion-title>Recipes</ion-title>
   </ion-navbar>
 
 </ion-header>
-
-
 <ion-content padding>
   <ion-list>
     <button
