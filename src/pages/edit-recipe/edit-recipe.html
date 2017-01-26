@@ -40,10 +40,20 @@
     </button>
     <ion-list formArrayName="ingredients">
       <div *ngFor="let igControl of recipeForm.get('ingredients').controls; let i = index">
-        <ion-item [formGroupName]="i">
-          <ion-input type="text" formControlName="name" [value]="igControl.controls['name'].value"></ion-input>
-          <ion-input type="number" formControlName="amount" [value]="igControl.controls['amount'].value"></ion-input>
-        </ion-item>
+        <ion-list [formGroupName]="i">
+          <ion-row>
+            <ion-col width-75>
+              <ion-item>
+                <ion-input type="text" formControlName="name" placeholder="Ingredient"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col width-25>
+              <ion-item>
+                <ion-input type="number" formControlName="amount" placeholder="Amount"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-list>
       </div>
     </ion-list>
     <button type="submit" ion-button block [disabled]="!recipeForm.valid">{{ mode }} Recipe</button>
